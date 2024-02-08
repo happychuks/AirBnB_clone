@@ -56,6 +56,10 @@ class HBNBCommand(cmd.Cmd):
         """EOF signal to exit the program."""
         print("")
         return True
+    
+    def emptyline(self):
+        """Do nothing upon receiving an empty line."""
+        pass
 
 
 if __name__ == "__main__":
