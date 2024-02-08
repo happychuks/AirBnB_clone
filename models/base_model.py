@@ -40,12 +40,14 @@ class BaseModel(Base):
                 elif key in ("created_at", "updated_at"):
                     iso_format = "%Y-%m-%dT%H:%M:%S.%f"
                     try:
-                      setattr(self, key, datetime.strptime(kwargs[key], iso_format))
+                        setattr(self, key, datetime.strptime(
+                            kwargs[key], iso_format
+                            ))
                     except ValueError:
-                      """
-                          Handle invalid date instead of pass
-                      """
-                      print("Invalid datetime format for {}: {}".format(key, kwargs[key]))
+                        """
+                            Handle invalid date
+                        """
+                        print("Invalid date {}: {}".format(key, kwargs[key]))
                 else:
                     setattr(self, key, kwargs[key])
                 self.id = str(uuid4())
@@ -59,8 +61,9 @@ class BaseModel(Base):
         """
             Then return string representation of the Model
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__,
-                                     self.id, self.__dict__)
+        return "[{}] ({}) {}".format(
+            self.__class__.__name__, self.id, self.__dict__
+            )
 
     def save(self):
         """

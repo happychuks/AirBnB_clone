@@ -12,6 +12,7 @@ from os import environ
 
 storage_engine = environ.get("HBNB_TYPE_STORAGE")
 
+
 class State(BaseModel, Base):
     """
     State class to represent states!
@@ -32,10 +33,10 @@ class State(BaseModel, Base):
         def cities(self):
             """
             cities list
-            Retrieves a list of City instances related to the current State instance.
+            Retrieves a list of City instances
 
             Returns:
-                list: List of City instances related to the current State instance.
+                list: List of City instances
             """
             result = []
             for j, i in models.storage.all(models.city.City).items():
