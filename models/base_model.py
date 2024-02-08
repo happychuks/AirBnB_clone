@@ -21,44 +21,33 @@ class BaseModel:
     """Represents the BaseModel of the HBnB project."""
     
     def __init__(self, *args, **kwargs):
-        """
-            To initialize a new BaseModel
+        '''Initializes instance attributes'''
 
-        Args:
-            *args (any): Unused.
-            **kwargs (dict): Key/value pairs of attributes.
-        """
-        if kwargs:
-            for key in kwargs:
+        if len(kwargs) == 0:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
+        else:
+            for key in kwargs.keys():
+                # check and escape the __class__ key
                 if key == "__class__":
                     continue
-                elif key in ("created_at", "updated_at"):
-                    iso_format = "%Y-%m-%dT%H:%M:%S.%f"
-                    try:
-                        setattr(self, key, datetime.strptime(
-                            kwargs[key], iso_format
-                            ))
-                    except ValueError:
-                        """
-                            Handle invalid date
-                        """
-                        print("Invalid date {}: {}".format(key, kwargs[key]))
                 else:
+                    # check and change the format for updated_at & created_at
+                    if key == "updated_at" or key == "created_at":
+                        kwargs[key] = datetime.strptime(
+                            kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
+                    # set the attributes of the instance
                     setattr(self, key, kwargs[key])
-                self.id = str(uuid4())
-            if "id" not in kwargs:
-                self.id = str(uuid4())
-        else:
-            self.id = str(uuid4())
-            self.created_at = self.updated_at = datetime.now()
+                
 
     def __str__(self):
         """
             Then return string representation of the Model
         """
-        return "[{}] ({}) {}".format(
-            self.__class__.__name__, self.id, self.__dict__
-            )
+        return "[{}] ({}) {}".\
+            format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
         """
@@ -72,15 +61,15 @@ class BaseModel:
         """
             the custom representation of a model
         """
-        custom_dict = {
-            "__class__": self.__class__.__name__,
-            "created_at": self.created_at.isoformat(),
-            "updated_at": self.updated_at.isoformat()
-        }
-        for key, value in self.__dict__.items():
-            if key not in ("id", "_sa_instance_state"):
-                custom_dict[key] = value
-        return custom_dict
+        custom_dict = {}
+        for key in self.__dict__.keys():
+            if key not in ('created_at', 'updated_at'):
+                custom_dict[key] = self.__dict__[key]
+            else:
+                custom_dict[key] = datetime.isoformat(
+                    self.__dict__[key])
+        custom_dict['__class__'] = self.__class__.__name__
+        return (custom_dict)
 
     def delete(self):
         """
