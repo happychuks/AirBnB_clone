@@ -1,11 +1,28 @@
 #!/usr/bin/python3
 """
-    City Module
+    This Module contains the City class
+    It represents a city
 """
 
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from models.state import State
+from sqlalchemy.orm import relationship
+from sqlalchemy import Column, String, ForeignKey
+from os import environ
 
-class City(BaseModel):
-    """City class for AirBnB"""
-    state_id = ""
-    name = ""
+storage_engine = environ.get("HBNB_TYPE_STORAGE")
+
+
+class City(BaseModel, Base):
+    """
+        The City class that represents a city
+    """
+
+    if (storage_engine == "db"):
+        __tablename__ = "cities"
+        state_id = Column(String(60), ForeignKey(State.id))
+        name = Column(String(128), nullable=False)
+        places = relationship("Place", backref="cities")
+    else:
+        name = ""
+        state_id = ""
