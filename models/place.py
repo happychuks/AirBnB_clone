@@ -1,87 +1,33 @@
 #!/usr/bin/python3
-"""
-    This Module contains the Place class
-    It represents a place!
-"""
-
-from models.base_model import BaseModel, Base
-from sqlalchemy.orm import relationship
-import models
-from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
-from os import environ
-
-storage_engine = environ.get("HBNB_TYPE_STORAGE")
-
-if storage_engine == "db":
-    place_amenity = Table('place_amenity', Base.metadata,
-                          Column('place_id', String(60),
-                                 ForeignKey('places.id'),
-                                 primary_key=True, nullable=False),
-                          Column('amenity_id', String(60),
-                                 ForeignKey('amenities.id'),
-                                 primary_key=True, nullable=False))
+"""Defines the Place class."""
+from models.base_model import BaseModel
 
 
-class Place(BaseModel, Base):
-    """
-        The main Place class
+class Place(BaseModel):
+    """Represent a place.
+
+    Attributes:
+        city_id (str): The City id.
+        user_id (str): The User id.
+        name (str): The name of the place.
+        description (str): The description of the place.
+        number_rooms (int): The number of rooms of the place.
+        number_bathrooms (int): The number of bathrooms of the place.
+        max_guest (int): The maximum number of guests of the place.
+        price_by_night (int): The price by night of the place.
+        latitude (float): The latitude of the place.
+        longitude (float): The longitude of the place.
+        amenity_ids (list): A list of Amenity ids.
     """
 
-    __tablename__ = "places"
-
-    if (storage_engine == "db"):
-        city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
-        user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
-        name = Column(String(128), nullable=False)
-        description = Column(String(1024), nullable=True)
-        number_rooms = Column(Integer, nullable=False, default=0)
-        number_bathrooms = Column(Integer, nullable=False, default=0)
-        max_guest = Column(Integer, nullable=False, default=0)
-        price_by_night = Column(Integer, nullable=False, default=0)
-        latitude = Column(Float, nullable=True)
-        longitude = Column(Float, nullable=True)
-        amenity_ids = []
-        reviews = relationship("Review", back_populates="place")
-        amenities = relationship("Amenity",
-                                 secondary=place_amenity,
-                                 back_populates="place_amenities",
-                                 viewonly=False)
-    else:
-        city_id = ""
-        user_id = ""
-        name = ""
-        description = ""
-        number_rooms = 0
-        number_bathrooms = 0
-        max_guest = 0
-        price_by_night = 0
-        latitude = 0.0
-        longitude = 0.0
-        amenity_ids = []
-
-        @property
-        def reviews(self):
-            """ A Getter function for reviews """
-            result = []
-            temp = models.dummy_classes['Review']
-            for r in models.storage.all(temp).values():
-                if r.place_id == self.id:
-                    result.append(r)
-            return result
-
-        @property
-        def amenities(self):
-            """ A Getter function for amenity """
-            result = []
-            temp = models.dummy_classes['Amenity']
-            for a in models.storage.all(temp).values():
-                if a in self.amenity_ids:
-                    result.append(a)
-            return result
-
-        @amenities.setter
-        def amenities(self, obj):
-            """ A Setter for amenities """
-            temp = models.dummy_classes['Amenity']
-            if (isinstance(obj, models.storage.all(temp))):
-                self.amenity_ids.append(obj.id)
+    city_id = ""
+    user_id = ""
+    name = ""
+    description = ""
+    number_rooms = 0
+    number_bathrooms = 0
+    max_guest = 0
+    price_by_night = 0
+    latitude = 0.0
+    longitude = 0.0
+    amenity_ids = []

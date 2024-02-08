@@ -5,33 +5,28 @@
 from uuid import uuid4
 from datetime import datetime
 import models
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from os import environ
+# from sqlalchemy import create_engine, Column, Integer, String, DateTime
+# from sqlalchemy.ext.declarative import declarative_base
+# from os import environ
 
-storage_engine = environ.get("HBNB_TYPE_STORAGE")
+# storage_engine = environ.get("HBNB_TYPE_STORAGE")
 
-if (storage_engine == "db"):
-    Base = declarative_base()
-else:
-    Base = object
+# if (storage_engine == "db"):
+#     Base = declarative_base()
+# else:
+#     Base = object
 
 
-class BaseModel(Base):
-    """
-        The Base class that defines all common attributes and methods
-        for subsequent classes
-    """
-
-    __tablename__ = 'base_model'
-
-    id = Column(String(60), primary_key=True, nullable=False)
-    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-
+class BaseModel:
+    """Represents the BaseModel of the HBnB project."""
+    
     def __init__(self, *args, **kwargs):
         """
-            To initialize the BaseModel
+            To initialize a new BaseModel
+
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
         """
         if kwargs:
             for key in kwargs:
