@@ -19,7 +19,7 @@ import models
 
 class BaseModel:
     """Represents the BaseModel of the HBnB project."""
-    
+
     def __init__(self, *args, **kwargs):
         '''Initializes instance attributes'''
 
@@ -40,7 +40,6 @@ class BaseModel:
                             kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
                     # set the attributes of the instance
                     setattr(self, key, kwargs[key])
-                
 
     def __str__(self):
         """
