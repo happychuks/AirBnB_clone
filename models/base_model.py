@@ -5,16 +5,6 @@
 from uuid import uuid4
 from datetime import datetime
 import models
-# from sqlalchemy import create_engine, Column, Integer, String, DateTime
-# from sqlalchemy.ext.declarative import declarative_base
-# from os import environ
-
-# storage_engine = environ.get("HBNB_TYPE_STORAGE")
-
-# if (storage_engine == "db"):
-#     Base = declarative_base()
-# else:
-#     Base = object
 
 
 class BaseModel:
@@ -30,11 +20,15 @@ class BaseModel:
             models.storage.new(self)
         else:
             for key in kwargs.keys():
-                # check and escape the __class__ key
+                """
+                    check and escape the __class__ key
+                """
                 if key == "__class__":
                     continue
                 else:
-                    # check and change the format for updated_at & created_at
+                    """
+                        check and change the format for updated_at & created_at
+                    """
                     if key == "updated_at" or key == "created_at":
                         kwargs[key] = datetime.strptime(
                             kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")

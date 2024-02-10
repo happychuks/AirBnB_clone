@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 """Defines the FileStorage class."""
 import json
 import os
@@ -25,28 +25,30 @@ class FileStorage:
     def all(self):
         """Return the dictionary __objects."""
         return self.__objects
-    
+
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
         objname = obj.__class__.__name__
         objID = obj.id
         key = f"{objname}.{objID}"  # <class name>.id = obj
         self.__objects[key] = obj
-    
+
     def save(self):
-        """Serialize __objects to the JSON file __file_path."""
-        # serialize the object by first converting it to a dictionary
+        """
+            Serialize __objects to the JSON file __file_path.
+            serialize the object by first converting it to a dictionary
+        """
         object_dict = {}
 
         for key in self.__objects.keys():
             if type(self.__objects[key]) != dict:
                 object_dict[key] = self.__objects[key].to_dict()
-        # convert the dictionary object to json and write to the file
+        """ convert the dictionary object to json and write to the file"""
         file_name = self.__file_path
         with open(file_name, "w", encoding="utf-8") as jsonfile:
-            # json.dump(object_dict, jsonfile)
+            """# json.dump(object_dict, jsonfile)"""
             jsonfile.write(json.dumps(object_dict))
-    
+
     def classes(self):
         """Returns a dictionary of valid classes and their references."""
 
@@ -59,12 +61,12 @@ class FileStorage:
                    "Review": Review
                    }
         return classes
-    
+
     def reload(self):
         """Reloads the stored objects"""
-        
+
         if os.path.exists(FileStorage.__file_path):
-            #  load the file and dump content as dictionary
+            """load the file and dump content as dictionary"""
             with open(FileStorage.__file_path, "r", encoding="utf-8") \
                     as my_file:
                 object_dict = json.loads(my_file.read())
