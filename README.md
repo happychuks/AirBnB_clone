@@ -171,7 +171,7 @@ The recognizable commands by the interpreter are the following:
 
 ## Project Architecture
 
-![project-architecture](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240208T153554Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=19c87eaef295e188651f2cf565fbdc6454dc500b8cc8306cefea0cc487ddc5b1)
+![alt-project_architecture](./assets/architecture.png)
 ## Authors
 
 Adioz Daniel | Email: [adioz](mailto:adiozdaniel@gmail.com) 
