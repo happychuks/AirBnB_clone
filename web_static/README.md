@@ -1,6 +1,6 @@
 # 0x01. AirBnB clone - Web static
 
-![titles](../README/web_static_titles.svg)
+![titles](/README/web_static_titles.svg)
 
 **Concepts**
 _For this project, we expect you to look at these concepts:_
@@ -70,7 +70,7 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 
 ## Requirements
 
-### GeneralRequirements
+### General Requirements
 
 - Allowed editors: `vi`, `vim`, `emacs`
 - All your files should end with a new line
@@ -87,7 +87,7 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 
 ## More Info
 
-![moreInfo](../README/815046647d23428a14ca.png)
+![moreInfo](/README/815046647d23428a14ca.png)
 
 ## Tasks
 
@@ -118,7 +118,8 @@ Requirements:
 - You are not allowed to use the `style` tag in the `head` tag
 - Use inline styling for all your tags
 
-- **Repo**:
+![0-index](/README/0-index.png)
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -137,7 +138,7 @@ Requirements:
 
 The layout must be exactly the same as `0-index.html`
 
-- **Repo**:
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -158,7 +159,7 @@ Requirements:
 
 The layout must be exactly the same as `1-index.html`
 
-- **Repo**:
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -176,13 +177,13 @@ Layout:
   - font color: #484848
   - font size: 14px
   - font family: `Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;`
-  - `icon` in the browser tab
+  - [icon](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon.png) in the browser tab
 - Header:
   - color: white
   - height: 70px
   - width: 100%
   - border bottom 1px #CCCCCC
-  - `logo` align on left and center vertically (20px space at the left)
+  - [logo](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png) align on left and center vertically (20px space at the left)
 - Footer:
   - color white
   - height: 60px
@@ -203,7 +204,9 @@ Requirements:
   - `styles/3-header.css`: for the header style
   - `styles/3-footer.css`: for the footer style
 
-- **Repo**:
+![1-index](/README/1-index.png)
+
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -257,7 +260,8 @@ Requirements:
   - `styles/4-filters.css`: for the filters style
 - `4-index.html` **won’t be W3C valid**, don’t worry, it’s temporary
 
-- **Repo**:
+![4-search](/README/4-search.png)
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -300,7 +304,8 @@ Requirements:
   - `styles/3-footer.css`: for the footer style
   - `styles/5-filters.css`: for the filters style
 
-- **Repo**:
+![5more](/README/5-more.png)
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -340,7 +345,10 @@ Requirements:
   - `styles/3-footer.css`: for the footer style
   - `styles/6-filters.css`: for the filters style
 
-- **Repo**:
+![its-over1](/README/6-its.png)
+![its-over1](/README/6-its2.png)
+
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -386,7 +394,8 @@ Requirements:
   - `styles/6-filters.css`: for the filters style
   - `styles/7-places.css`: for the places style
 
-- **Repo**:
+![7-display](/README/7-display.png)
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -421,19 +430,19 @@ Add more information to a Place `article`:
       - classname: `max_guest`
       - width: 100px
       - fake text
-      - `icon`
+      - [icon](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_group.png)
     - Number of bedrooms:
       - tag: `div`
       - classname: `number_rooms`
       - width: 100px
       - fake text
-      - `icon`
+      - [icon](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png)
     - Number of bathrooms:
       - tag: `div`
       - classname: `number_bathrooms`
       - width: 100px
       - fake text
-      - `icon`
+      - [icon](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bath.png)
 - User section:
   - tag: `div`
   - classname: `user`
@@ -458,7 +467,8 @@ Requirements:
   - `styles/6-filters.css`: for the filters style
   - `styles/8-places.css`: for the places style
 
-- **Repo**:
+![8-more](/README/8-more.png)
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -473,20 +483,21 @@ Layout: (based on `8-index.html`)
 Add more information to a Place `article`:
 
 - List of Amenities:
+
   - tag `div`
   - classname `amenities`
   - margin top 40px
   - contains:
-    _ title:
-    _ tag `h2`
-    _ text `Amenities`
-    _ font size 16px
-    _ border bottom #DDDDDD 1px
-    _ list of amenities:
-    _ tag `ul` / `li`
-    _ no list style \* icons on the left: [Pet friendly], [TV], [Wifi], etc… feel free to add more
+    - title:
+    - tag `h2`
+    - text `Amenities`
+    - font size 16px
+    - border bottom #DDDDDD 1px
+    - list of amenities:
+    - tag `ul` / `li`
+    - no list style \* icons on the left: [Pet friendly](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_pets.png), [TV](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_tv.png), [Wifi](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_wifi.png), etc… feel free to add more
 
-* List of Reviews:
+- List of Reviews:
 
   - tag `div`
   - classname `reviews`
@@ -501,9 +512,10 @@ Add more information to a Place `article`:
       - tag `ul` / `li`
       - no list style
       - a review is described by:
-        _ `h3` tag for the user/date description (font size 14px). Ex: “From Bob Dylan the 27th January 2017”
-        _ `p` tag for the text (font size 12px)
-        Requirements:
+        - `h3` tag for the user/date description (font size 14px). Ex: “From Bob Dylan the 27th January 2017”
+        - `p` tag for the text (font size 12px)
+
+Requirements:
 
 - You must use: `header`, `footer`, `section`, `article`, `button`, `h1`, `h2`, `h3`, `h4`, `ul`, `li` tags
 - No inline style
@@ -517,7 +529,9 @@ Add more information to a Place `article`:
   - `styles/6-filters.css`: for the filters style
   - `styles/100-places.css`: for the places style
 
-- **Repo**:
+![9-full](/README/9-full.png)
+
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -525,11 +539,11 @@ Add more information to a Place `article`:
 
 ### 10. Flex (#advanced)
 
-Improve the Places section by using [Flexible boxes] for all Place articles
+Improve the Places section by using [Flexible boxes](https://intranet.alxswe.com/rltoken/Xc-nBlQHexwNaCuKYpZ2-A) for all Place articles
 
-[Flexbox Froggy]
+[Flexbox Froggy](https://intranet.alxswe.com/rltoken/PZz46Gkdj5Mo9-AWERPhQA)
 
-- **Repo**:
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -537,7 +551,7 @@ Improve the Places section by using [Flexible boxes] for all Place articles
 
 ### 11. Responsive design (#advanced)
 
-Improve the page by adding responsive design to display correctly in mobile or small screens.
+Improve the page by adding [responsive design](https://intranet.alxswe.com/rltoken/9mRhZcLRxmsuCyF8q7S8Ww) to display correctly in mobile or small screens.
 
 Examples:
 
@@ -545,7 +559,7 @@ no horizontal scrolling
 redesign search bar depending of the width
 etc.
 
-- **Repo**:
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
@@ -553,7 +567,7 @@ etc.
 
 ### 12. Accessibility (#advanced)
 
-Improve the page by adding Accessibility support
+Improve the page by adding [Accessibility support](https://intranet.alxswe.com/rltoken/JO-zonPvzBUfqpYRZDAtug)
 
 Examples:
 
@@ -562,9 +576,9 @@ Header tags
 etc.
 Well done on completing this project! Let the world hear about this milestone achieved.
 
-Click here to tweet!
+[Click here to tweet!](https://twitter.com/intent/tweet?text=I+have+successfully+completed+my+AirBnB+Web+Static+project+on+%23ALX_SE+%40facesofalxse)
 
-- **Repo**:
+**Repo**:
 
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
