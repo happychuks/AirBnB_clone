@@ -1,3 +1,9 @@
+@font-face {
+	font-family: circular;
+	src: url("fonts/CircularStd-Black.woff"), url("fonts/CircularStd-Bold.woff");
+	font-weight: normal;
+}
+
 body {
 	margin: 0;
 	padding: 0;
