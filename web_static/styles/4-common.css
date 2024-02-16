@@ -18,4 +18,5 @@ body {
 	width: 100%;
 	margin: 30px auto;
 	position: relative;
+	box-shadow: 0 0.09rem 0.04rem 0 rgba(0, 0, 0, 0.26);
 }
