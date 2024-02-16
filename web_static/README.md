@@ -35,7 +35,6 @@ Before starting, please fork or clone the repository `AirBnB_clone` from your pa
 - [Learn to Code HTML & CSS](https://intranet.alxswe.com/rltoken/T9KyiA6_Tm3Ny6oTn08S-A) (until “Creating Lists” included)
 - [Inline Styles in HTML](https://intranet.alxswe.com/rltoken/7NdYbImFNofpB_FXXn3otg)
 - [Specifics on CSS Specificity](https://intranet.alxswe.com/rltoken/z_OTPFCjmhXJJi7KJqBCbQ)
-- [CSS SpeciFishity](https://intranet.alxswe.com/rltoken/orI812cozq-yd2769VdM_w)
 - [Introduction to HTML](https://intranet.alxswe.com/rltoken/okP4V3RxFXHkEcQo19AnuQ)
 - [CSS](https://intranet.alxswe.com/rltoken/Ir8Ka59FO6Z_vJQ-gkSG_w)
 - [MDN](https://intranet.alxswe.com/rltoken/BpSXtcWOGH0UT4XLCoQyJg)
@@ -583,3 +582,8 @@ Well done on completing this project! Let the world hear about this milestone ac
 - GitHub repository: `AirBnB_clone`
 - Directory: `web_static`
 - File: `103-index.html, styles/103-common.css, styles/103-header.css, styles/103-footer.css, styles/103-filters.css, styles/103-places.css, images/`
+
+**Validating html & CSS**:
+
+- `./w3c_validator.py index.html`
+- `./w3c_validator.py css/styles.css`
